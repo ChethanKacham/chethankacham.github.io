@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import NavBar from "./components/NavBar/NavBar";
+import Introduction from "./components/Introduction/Introduction";
+import Skills from "./components/Skills/Skills";
+import Contact from "./components/Contact/Contact";
+import Works from "./components/Works/Works";
+import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
+  // useEffect(() => {
+  //   const hash = window.location.hash;
+  //   if (hash) {
+  //     const element = document.getElementById(hash.substring(1));
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   }
+  // }, []);
+
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Router>
+        <Routes>
+          <Route path="/" element={<NavBar />} />
+          <Route path="/" element={<Introduction />} />
+          <Route path="/" element={<Skills />} />
+          <Route path="/" element={<Works />} />
+          <Route path="/" element={<Contact />} />
+          <Route path="/" element={<Footer />} />
+        </Routes>
+      </Router> */}
+      <NavBar />
+      <Introduction />
+      <Skills />
+      <Works />
+      <Contact />
+      <Footer />
     </div>
+    </Router>
   );
 }
 
