@@ -11,7 +11,7 @@
     position: absolute;
     /* top: -4rem; */
     top: 0;
-    right: 0;
+    right: 2vw;
     z-index: -1;
     object-fit: cover;
     height: 100vh;
@@ -65,7 +65,7 @@
     }
 
     .bg {
-        right: -10vw;
+        right: -5vw;
     }
     
     .hello {
@@ -75,21 +75,29 @@
 
 @media screen and (max-width: 480px) {
     .bg {
-        right: -30vw
+        right: -5vw
     }
 }
 
 @media screen and (max-width: 420px) {
     .bg {
-        right: -40vw
+        right: -10vw
     }
 }
 
 @media screen and (max-width: 360px) {
     .bg {
-        right: -50vw
+        right: -10vw
     }
 }
+
+
+@media screen and (max-width: 300px) {
+    .bg {
+        right: -25vw
+    }
+}
+
 
 /*Extra*/
 /* @media screen and (max-width: 350px) {

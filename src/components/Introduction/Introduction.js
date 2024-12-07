@@ -1,6 +1,6 @@
 import React from 'react';
 import './Introduction.css';
-import bg from '../../assets/profileimage.png';
+import bg from '../../assets/ChethanProfilepicCrop.jpg';
 import { Link } from 'react-scroll';
 import btnImg from '../../assets/hireme.png';
 
@@ -17,7 +17,8 @@ const Introduction = () => {
                     Full Stack Developer & <br />
                     DevOps Engineer
             </span>
-            <p className='introPara'>An innovative Full Stack Developer and DevOps Engineer with a<br/> proven track record of streamlining processes and boosting<br/> performance using the latest technologies. </p>
+            <p className='introPara'>A passionate Full Stack Developer and DevOps Engineer with hands-on experience in building efficient, scalable applications and automating workflows. With a strong background in ReactJS, Java, Docker and cloud technologies, I thrive on delivering impactful solutions that enhance user experience and operational efficiency.</p>
+            {/* <p className='introPara'>An innovative Full Stack Developer and DevOps Engineer with a<br/> proven track record of streamlining processes and boosting<br/> performance using the latest technologies. </p> */}
             <Link>
                 <button className='btn'>
                     <img src= {btnImg} alt='Hire Me' className='btnImg'/>
