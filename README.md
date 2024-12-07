@@ -3,7 +3,7 @@
 A modern and responsive portfolio website to showcase my skills, projects, and experiences as a Full Stack Developer and DevOps Engineer. Built using ReactJS, this website is designed to create a lasting impression on recruiters and potential collaborators.
 
 ## 🚀 Live Demo
-[Check out my portfolio live] (https://chethankacham.github.io/)
+[Check out my portfolio live](https://chethankacham.github.io/)
 
 ---
 
@@ -14,32 +14,6 @@ A modern and responsive portfolio website to showcase my skills, projects, and e
 - **Email Service**: [EmailJS](https://www.emailjs.com/)
 - **Tools**: Node.js, npm
 
-## Features
-
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
-- **Smooth Navigation**: Seamless scrolling between sections using `react-scroll`.
-- **Dynamic Content**: Projects and contact forms with real-time updates.
-- **Modern Aesthetics**: Clean, visually appealing, and recruiter-friendly UI.
-- **Contact Form**: Integrated with EmailJS for effortless communication.
-
-
-## Sections
-
-1. **Introduction**
-   - Highlighting my professional background and expertise.
-
-2. **Skills**
-   - Displaying technical proficiencies with icons and descriptions.
-
-3. **Portfolio**
-   - A gallery of completed projects with interactive features.
-
-4. **Contact**
-   - Form for direct communication and client logo showcase.
-
-5. **Footer**
-   - Quick navigation links and copyright notice.
-
 ## 🔧 Installation and Setup
 
 To run the project locally, follow these steps:
@@ -49,12 +23,15 @@ To run the project locally, follow these steps:
    git clone https://github.com/ChethanKacham/chethankacham.github.io.git
 
 2. Navigate to the project directory:
+   ```bash
    cd chethankacham.github.io.git
 
 3. Install dependencies:
+   ```bash
    npm install
 
 4. Start the development server:
+   ```bash
    npm start
 
 5. Open your browser and navigate to http://localhost:3000.
@@ -73,3 +50,25 @@ Feel free to reach out to me for collaborations or opportunities:
  - LinkedIn: linkedin.com/in/chethankacham
  - GitHub: github.com/ChethanKacham
 
+## 🌟 Features
+
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
+- **Smooth Navigation**: Seamless scrolling between sections using `react-scroll`.
+- **Dynamic Content**: Projects and contact forms with real-time updates.
+- **Modern Aesthetics**: Clean, visually appealing, and recruiter-friendly UI.
+- **Contact Form**: Integrated with EmailJS for effortless communication.
+
+
+## 💼 Sections
+
+1. **Introduction**
+   - Highlighting my professional background and expertise.
+
+2. **Skills**
+   - Displaying technical proficiencies with icons and descriptions.
+
+3. **Portfolio**
+   - A gallery of completed projects with interactive features.
+
+4. **Contact**
+   - Form for direct communication and client logo showcase.

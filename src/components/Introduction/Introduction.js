@@ -17,7 +17,7 @@ const Introduction = () => {
                     Full Stack Developer & <br />
                     DevOps Engineer
             </span>
-            <p className='introPara'>A passionate Full Stack Developer and DevOps Engineer with hands-on experience in building efficient, scalable applications and automating workflows. With a strong background in ReactJS, Java, Docker and cloud technologies, I thrive on delivering impactful solutions that enhance user experience and operational efficiency.</p>
+            <p className='introPara'>A passionate Full Stack Developer and DevOps Engineer with hands-on experience<br/> in building efficient, scalable applications and automating workflows. With a strong<br/> background in ReactJS, Java, DevOps tools and cloud technologies, I thrive on<br/> delivering impactful solutions that enhance user experience and operational<br/> efficiency.</p>
             {/* <p className='introPara'>An innovative Full Stack Developer and DevOps Engineer with a<br/> proven track record of streamlining processes and boosting<br/> performance using the latest technologies. </p> */}
             <Link>
                 <button className='btn'>
