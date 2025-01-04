@@ -8,7 +8,97 @@
 }
 
 body {
+    /* Global Reset and Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
     background-color: rgb(30, 30, 30);
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: scroll; /* Always show vertical scrollbar */
+    line-height: 1.6; /* Improved readability for body text */
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Consistent padding for all sections */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Scroll Behavior */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Anchor Links */
+a {
+    color: inherit; /* Inherit text color */
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ffd700; /* Highlight on hover */
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Section Defaults */
+section {
+    padding: 4rem 0; /* Consistent section spacing */
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+    }
+}
+background-color: rgb(30, 30, 30);
     color: white;
     overflow: hidden;
     overflow-y: scroll;

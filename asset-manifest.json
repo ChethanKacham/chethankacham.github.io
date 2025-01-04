@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2316e9de.css",
-    "main.js": "/static/js/main.ed485f53.js",
+    "main.css": "/static/css/main.77ab8870.css",
+    "main.js": "/static/js/main.2254feb0.js",
     "static/media/ChethanProfilepicCrop.jpg": "/static/media/ChethanProfilepicCrop.b63854e5c3fd049ab88f.jpg",
     "static/media/portfolio-6.png": "/static/media/portfolio-6.4a10fac7d271e87859e9.png",
     "static/media/portfolio-2.png": "/static/media/portfolio-2.33d06b368b4e6395030e.png",
@@ -12,13 +12,12 @@
     "static/media/facebook.png": "/static/media/facebook.81dd033a37c4860f7121.png",
     "static/media/adobe.png": "/static/media/adobe.a08b8360ff7b700ed0c4.png",
     "static/media/walmart.png": "/static/media/walmart.1d2b5e5c5c5a8e2bd5ce.png",
-    "static/media/ui-design.png": "/static/media/ui-design.c4acd455fc2040eddcc8.png",
     "index.html": "/index.html",
-    "main.2316e9de.css.map": "/static/css/main.2316e9de.css.map",
-    "main.ed485f53.js.map": "/static/js/main.ed485f53.js.map"
+    "main.77ab8870.css.map": "/static/css/main.77ab8870.css.map",
+    "main.2254feb0.js.map": "/static/js/main.2254feb0.js.map"
   },
   "entrypoints": [
-    "static/css/main.2316e9de.css",
-    "static/js/main.ed485f53.js"
+    "static/css/main.77ab8870.css",
+    "static/js/main.2254feb0.js"
   ]
 }
