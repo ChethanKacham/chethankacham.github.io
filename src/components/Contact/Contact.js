@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import './Contact.css';
 import Walmart from '../../assets/walmart.png';
 import Adobe from '../../assets/adobe.png';

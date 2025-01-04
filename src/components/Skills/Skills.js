@@ -1,37 +1,27 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import "./Skills.css";
 import skillData from "./skillsData";
 
 const Skills = () => {
   const [selectedOption, setSelectedOption] = useState("skillCategories");
   const [selectedCategory, setSelectedCategory] = useState(
-    skillData?.skillCategories?.categories?.[0] || "Default Category"
+    skillData.skillCategories.categories[0] // Default to the first category
   );
-
-  const detailsRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 700 && detailsRef.current) {
-        detailsRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
-    setSelectedCategory(skillData[option]?.categories?.[0] || "Default Category");
+    setSelectedCategory(skillData[option]?.categories[0]); // Default to the first category for the selected option
   };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
 
-    // Scroll to the right section on small screens
-    if (window.innerWidth < 700 && detailsRef.current) {
-      detailsRef.current.scrollIntoView({ behavior: "smooth" });
+    // Scroll to details only on click (for smaller screens)
+    if (window.innerWidth < 700) {
+      const detailsElement = document.querySelector(".skills-details");
+      if (detailsElement) {
+        detailsElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -71,7 +61,7 @@ const Skills = () => {
       <div className="skills-content">
         {/* Left Side */}
         <div className="skills-left">
-          {currentData?.categories?.map((category) => (
+          {currentData.categories.map((category) => (
             <div
               key={category}
               className={`category-card ${
@@ -85,12 +75,12 @@ const Skills = () => {
         </div>
 
         {/* Right Side */}
-        <div className="skills-details" ref={detailsRef}>
+        <div className="skills-details">
           <h3 className="details-heading">{selectedCategory}</h3>
           {selectedOption === "skillCategories" ? (
             selectedCategory === "Certifications" ? (
               <div className="certifications-container">
-                {currentData.details[selectedCategory]?.map((cert, index) => (
+                {currentData.details[selectedCategory].map((cert, index) => (
                   <div key={index} className="certification-card">
                     <p>{cert}</p>
                   </div>
@@ -98,7 +88,7 @@ const Skills = () => {
               </div>
             ) : (
               <div className="progress-bars">
-                {currentData?.details[selectedCategory]?.map((item) => (
+                {currentData.details[selectedCategory].map((item) => (
                   <div key={item.name} className="progress-bar">
                     <span className="progress-name">{item.name}</span>
                     <div className="progress">
@@ -113,7 +103,7 @@ const Skills = () => {
             )
           ) : (
             <div className="tech-grid">
-              {currentData?.details[selectedCategory]?.map((tech, index) => (
+              {currentData.details[selectedCategory].map((tech, index) => (
                 <div key={index} className="tech-item">
                   {tech}
                 </div>

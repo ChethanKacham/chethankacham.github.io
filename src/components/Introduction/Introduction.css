@@ -73,6 +73,12 @@
     flex-wrap: wrap;
 }
 
+.btnImg {
+    object-fit: cover;
+    margin: 0 0.25rem;
+    height: 1rem;
+}
+
 .btn {
     background: #ffd700;
     color: #1e1e2f;

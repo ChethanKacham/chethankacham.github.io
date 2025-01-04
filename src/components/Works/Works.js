@@ -1,4 +1,3 @@
-import React from "react";
 import "./Works.css";
 import Portfolio1 from "../../assets/portfolio-1.png";
 import Portfolio2 from "../../assets/portfolio-2.png";

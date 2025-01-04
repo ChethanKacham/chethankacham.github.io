@@ -1,8 +1,8 @@
-import React from 'react';
 import './Introduction.css';
 import profilePic from '../../assets/ChethanProfilepicCrop.jpg';
 import { Link } from 'react-scroll';
 import { FaDownload } from 'react-icons/fa';
+import btnImg from '../../assets/hireme.png';
 
 const Introduction = () => {
   return (
@@ -12,14 +12,14 @@ const Introduction = () => {
         <div className='introContent'>
           <span className='hello'>Hello,</span>
           <span>
-            I'm <span className='introName'>Chethan Kacham</span>
+            I&#39;m <span className='introName'>Chethan Kacham</span>
           </span>
           <p className='introPara'>
             A Full Stack Developer & DevOps Engineer passionate about building efficient and scalable applications.
           </p>
           <div className='btnContainer'>
             <Link to='contact' smooth={true} duration={500}>
-              <button className='btn'>Hire Me</button>
+              <button className='btn'><img src= {btnImg} alt='Hire Me' className='btnImg'/> Hire Me</button>
             </Link>
             <a
               href='/Resume.pdf'
