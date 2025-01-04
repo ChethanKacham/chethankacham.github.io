@@ -85,7 +85,8 @@
 
 .link {
     object-fit: cover;
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 20px;
     margin: 0 0.75rem;
 }

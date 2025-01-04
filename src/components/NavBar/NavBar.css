@@ -1,40 +1,47 @@
 .navbar {
-    background-color: rgb(30, 30, 30);
+    background: linear-gradient(135deg, #1e1e2f, #3e3e59);
     height: 5rem;
-    width: 100vw;
-    max-width: 75rem;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 2rem;
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
 }
 
 .logo {
     object-fit: cover;
     height: 3rem;
     width: 4rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Extra */
+.logo:hover {
+    transform: scale(1.1);
+}
+
 .desktopMenu {
     display: flex;
 }
 
 .desktopMenuListItem {
-    margin: 1rem;
-    cursor: pointer;
     color: white;
-    transition: color 0.3s ease-in-out;
+    margin: 0 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
 }
 
-.desktopMenuListItem:hover {
-    color: yellow;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow;
+.desktopMenuListItem:hover,
+.desktopMenuListItem.active {
+    color: #ffd700;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 0.2rem;
 }
 
 .desktopMenuBtn {
@@ -44,20 +51,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 2rem;
     cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.desktopMenuBtn:hover {
+    background: #ffd700;
+    color: black;
+    transform: scale(1.05);
 }
 
 .desktopMenuImg {
     object-fit: cover;
     height: 1rem;
     width: 1rem;
-    margin: 1rem;
+    margin: 0 0.5rem;
 }
 
-.active {
-    color: yellow;
+.mobileMenu {
+    display: none;
+    object-fit: cover;
+    height: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mobileMenu:hover {
+    transform: scale(1.1);
 }
 
 .navMenu {
@@ -68,25 +91,19 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    /* min-width: 12rem; */
     background: rgb(40, 40, 40);
     border-radius: 1rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
     transform: translateY(-10px);
     opacity: 0;
+    visibility: hidden;
 }
 
 .navMenu.show {
     transform: translateY(0);
     opacity: 1;
-}
-
-.mobileMenu {
-    display: none;
-    object-fit: cover;
-    height: 1.8rem;
-    cursor: pointer;
+    visibility: visible;
 }
 
 .listItem {
@@ -96,10 +113,11 @@
     background: rgb(40, 40, 40);
     border-radius: 0.5rem;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-weight: 500;
 }
 
 .listItem:hover {
-    background: yellow;
+    background: #ffd700;
     color: black;
 }
 
@@ -113,5 +131,10 @@
     }
     .mobileMenu {
         display: flex;
+    }
+
+    .navMenu {
+        width: 80%;
+        right: 10%;
     }
 }

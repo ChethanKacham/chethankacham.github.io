@@ -4,7 +4,7 @@ import Walmart from '../../assets/walmart.png';
 import Adobe from '../../assets/adobe.png';
 import Microsoft from '../../assets/microsoft.png';
 import Facebook from '../../assets/facebook.png';
-import LinkedIn from '../../assets/linkedin-icon.png';
+import LinkedIn from '../../assets/linkedin.png';
 import GitHub from '../../assets/github-icon.png';
 import emailjs from '@emailjs/browser';
 import { useNavigate } from 'react-router-dom';
@@ -62,8 +62,8 @@ const Contact = () => {
                     <textarea placeholder='Message' name='message' rows='3' className='contactInput' />
                     <button type='submit' name='Send' className='contactBtn'>Send</button>
                     <div className='links'>
-                        <img src={LinkedIn} alt='linkedin.com/in/chethankacham' className='link' />
-                        <img src={GitHub} alt='github.com/ChethanKacham' className='link' />
+                        <a href='https://www.linkedin.com/in/chethankacham/' target='blank'><img src={LinkedIn} alt='linkedin.com/in/chethankacham' className='link' /></a>
+                        <a href='https://github.com/ChethanKacham/' target='blank'><img src={GitHub} alt='github.com/ChethanKacham' className='link' /></a>
                     </div>
                 </form>
             </div>

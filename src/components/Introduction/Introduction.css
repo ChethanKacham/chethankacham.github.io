@@ -1,121 +1,208 @@
 #intro {
     height: calc(100vh - 5rem);
-    width: 100vw;
-    max-width: 75rem;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-}
-
-.bg {
-    position: absolute;
-    /* top: -4rem; */
-    top: 0;
-    right: 2vw;
-    z-index: -1;
-    object-fit: cover;
-    height: 100vh;
-}
-
-.introContent {
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
-    font-size: 3rem;
-    font-weight: 700;
+    background: linear-gradient(135deg, #1e1e2f, #3e3e59);
+    color: white;
+    text-align: center;
+}
+
+.introWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Profile Picture */
+.profilePic {
+    width: auto; /* Allows dynamic width based on the image aspect ratio */
+    height: 350px; /* Fixed height for proper rendering */
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid #ffd700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.profilePic:hover {
+    transform: scale(1.05);
+}
+
+/* Content Section */
+.introContent {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .hello {
-    font-size: 1.75rem;
-    font-weight: 100;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #f8f9fa;
+    margin-bottom: 0.5rem;
 }
 
 .introName {
-    color: yellow;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffd700;
+    margin-bottom: 1rem;
 }
 
 .introPara {
-    font-size: medium;
+    font-size: 1.2rem;
     font-weight: 300;
-    /* width: 40%; */
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btnContainer {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .btn {
-    background: white;
-    margin: 1rem 0rem;
-    border: none;
+    background: #ffd700;
+    color: #1e1e2f;
     padding: 0.75rem 1.5rem;
-    border-radius: 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.btnImg {
-    object-fit: cover;
-    margin: 0 0.25rem;
-    height: 1rem;
+.btn:hover {
+    background: #fff;
+    color: #1e1e2f;
+    box-shadow: 0 0 10px #ffd700;
 }
 
+.downloadResume {
+    border: 2px solid #ffd700;
+    background: transparent;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
 
-@media screen and (max-width: 840px) {
+.downloadResume:hover {
+    background: #ffd700;
+    color: #1e1e2f;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #intro {
+        padding: 1.5rem;
+    }
+
+    .introWrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     .introContent {
-        font-size: 10vw;
-        font-size: 8vw;
+        align-items: center;
     }
 
-    .bg {
-        right: -5vw;
+    .introPara {
+        text-align: center;
     }
-    
-    .hello {
-        font-size: 4.5vw;
+
+    .btnContainer {
+        justify-content: center;
+    }
+
+    .profilePic {
+        height: 250px; 
     }
 }
 
 @media screen and (max-width: 480px) {
-    .bg {
-        right: -5vw
+    .profilePic {
+        height: 250px; 
     }
-}
 
-@media screen and (max-width: 420px) {
-    .bg {
-        right: -10vw
+    .introName {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
 }
 
 @media screen and (max-width: 360px) {
-    .bg {
-        right: -10vw
-    }
-}
-
-
-@media screen and (max-width: 300px) {
-    .bg {
-        right: -25vw
-    }
-}
-
-
-/*Extra*/
-/* @media screen and (max-width: 350px) {
-    .bg {
-        right: -50vw;
-    }
-}
-
-@media screen and (max-width: 400px) {
     #intro {
-        right: -5vw;
-        bottom: -10vh;
+        padding: 1rem; /* Reduce padding to save space */
+    }
+
+    .introWrapper {
+        flex-direction: column; /* Stack image and text vertically */
+        gap: 1rem; /* Provide enough space between sections */
+    }
+
+    .profilePic {
+        height: 200px; /* Keep the image smaller to fit the screen */
+        border: 4px solid #ffd700; /* Proportional border size */
+    }
+
+    .introContent {
+        align-items: center; /* Center the text for better alignment */
+        text-align: center;
+    }
+
+    .hello {
+        font-size: 1.2rem; /* Slightly smaller font size for greeting */
+        margin-bottom: 0.5rem;
+    }
+
+    .introName {
+        font-size: 1.8rem; /* Scale down the name font size */
+        margin-bottom: 1rem;
+    }
+
+    .introPara {
+        font-size: 0.95rem; /* Adjust paragraph font size */
+        line-height: 1.4; /* Tighten line spacing for compactness */
+        max-width: 90%; /* Restrict width for better readability */
+    }
+
+    .btnContainer {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 0.5rem; /* Reduce gap between buttons */
+        width: 100%; /* Ensure buttons span full width */
+    }
+
+    .btn {
+        font-size: 0.85rem; /* Smaller font size for buttons */
+        padding: 0.5rem 1rem; /* Reduce padding for compact buttons */
+        width: 100%; /* Make buttons span the full width */
+        border-radius: 20px; /* Slightly smaller border radius */
+    }
+
+    .downloadResume {
+        font-size: 0.85rem; /* Smaller font for download button */
+        padding: 0.5rem 1rem;
+        width: 100%; /* Consistent with the primary button */
     }
 }
-
-@media screen and (max-width: 375px) {
-    #intro {
-        right: -10vw;
-        bottom: -20vh;
-    }
-}  */

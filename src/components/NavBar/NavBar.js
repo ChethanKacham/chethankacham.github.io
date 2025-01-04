@@ -1,39 +1,173 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './NavBar.css';
 import logo from '../../assets/logo.png';
 import contactImg from '../../assets/contact.png';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink, animateScroll } from 'react-scroll';
 import burgermenu from '../../assets/menu.png';
 
 const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
+
+    // Handle active section on scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['intro', 'skills', 'works', 'clients', 'contact'];
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top >= -200 && rect.top <= window.innerHeight / 2) {
+                        setActiveSection(section);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <nav className='navbar'>
-            <img src={logo} alt='logo' className='logo' />
+            {/* Logo */}
+            <img
+                src={logo}
+                alt='logo'
+                className='logo'
+                onClick={() => animateScroll.scrollToTop()}
+                style={{ cursor: 'pointer' }}
+            />
+
+            {/* Desktop Menu */}
             <div className='desktopMenu'>
-                <ScrollLink activeClass='active' to='intro' spy={true} smooth={true} offset={-100} duration={500} className='desktopMenuListItem'>Home</ScrollLink>
-                <ScrollLink activeClass='active' to='skills' spy={true} smooth={true} offset={-50} duration={500} className='desktopMenuListItem'>About</ScrollLink>
-                <ScrollLink activeClass='active' to='works' spy={true} smooth={true} offset={-50} duration={500} className='desktopMenuListItem'>Portfolio</ScrollLink>
-                <ScrollLink activeClass='active' to='clients' spy={true} smooth={true} offset={-50} duration={500} className='desktopMenuListItem'>Clients</ScrollLink>
+                <ScrollLink
+                    to='intro'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className={`desktopMenuListItem ${activeSection === 'intro' ? 'active' : ''}`}
+                >
+                    Home
+                </ScrollLink>
+                <ScrollLink
+                    to='skills'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className={`desktopMenuListItem ${activeSection === 'skills' ? 'active' : ''}`}
+                >
+                    About
+                </ScrollLink>
+                <ScrollLink
+                    to='works'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className={`desktopMenuListItem ${activeSection === 'works' ? 'active' : ''}`}
+                >
+                    Portfolio
+                </ScrollLink>
+                <ScrollLink
+                    to='clients'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className={`desktopMenuListItem ${activeSection === 'clients' ? 'active' : ''}`}
+                >
+                    Clients
+                </ScrollLink>
             </div>
-            <button className='desktopMenuBtn' onClick={() => {
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            }}>
+
+            {/* Contact Button */}
+            <button
+                className='desktopMenuBtn'
+                onClick={() =>
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+            >
                 <img src={contactImg} alt='Contact' className='desktopMenuImg' />
                 Contact Me
             </button>
 
-            <img src={burgermenu} alt='Menu' className='mobileMenu' onClick={() => setShowMenu(!showMenu)} />
-            <div className='navMenu' style={{ display: showMenu ? 'flex' : 'none' }}>
-                <ScrollLink activeClass='active' to='intro' spy={true} smooth={true} offset={-100} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Home</ScrollLink>
-                <ScrollLink activeClass='active' to='skills' spy={true} smooth={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>About</ScrollLink>
-                <ScrollLink activeClass='active' to='works' spy={true} smooth={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Portfolio</ScrollLink>
-                <ScrollLink activeClass='active' to='clients' spy={true} smooth={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Clients</ScrollLink>
-                <ScrollLink activeClass='active' to='contact' spy={true} smooth={true} offset={-50} duration={500} className='listItem' onClick={() => setShowMenu(false)}>Contact</ScrollLink>
+            {/* Mobile Menu Icon */}
+            <img
+                src={burgermenu}
+                alt='Menu'
+                className='mobileMenu'
+                onClick={() => setShowMenu(!showMenu)}
+                aria-expanded={showMenu}
+                aria-label='Toggle navigation menu'
+            />
+
+            {/* Mobile Menu */}
+            <div
+                className={`navMenu ${showMenu ? 'show' : ''}`}
+                style={{ display: showMenu ? 'flex' : 'none' }}
+            >
+                <ScrollLink
+                    to='intro'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className='listItem'
+                    onClick={() => setShowMenu(false)}
+                >
+                    Home
+                </ScrollLink>
+                <ScrollLink
+                    to='skills'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className='listItem'
+                    onClick={() => setShowMenu(false)}
+                >
+                    About
+                </ScrollLink>
+                <ScrollLink
+                    to='works'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className='listItem'
+                    onClick={() => setShowMenu(false)}
+                >
+                    Portfolio
+                </ScrollLink>
+                <ScrollLink
+                    to='clients'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className='listItem'
+                    onClick={() => setShowMenu(false)}
+                >
+                    Clients
+                </ScrollLink>
+                <ScrollLink
+                    to='contact'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className='listItem'
+                    onClick={() => setShowMenu(false)}
+                >
+                    Contact
+                </ScrollLink>
             </div>
         </nav>
     );
-}
+};
 
 export default NavBar;

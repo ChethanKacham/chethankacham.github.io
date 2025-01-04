@@ -1,43 +1,129 @@
-import React from 'react';
-import './Skills.css';
-// import { UIDesign } from '../../assets/frontend.png';
-// import { WebDesign } from '../../assets/backend.png';
-// import { AppDesign } from '../../assets/devops.png';
-import UIDesign from '../../assets/ui-design.png';
-import WebDesign from '../../assets/website-design.png';
-import AppDesign from '../../assets/app-design.png';
+import React, { useRef, useState, useEffect } from "react";
+import "./Skills.css";
+import skillData from "./skillsData";
 
-function Skills() {
+const Skills = () => {
+  const [selectedOption, setSelectedOption] = useState("skillCategories");
+  const [selectedCategory, setSelectedCategory] = useState(
+    skillData?.skillCategories?.categories?.[0] || "Default Category"
+  );
+
+  const detailsRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 700 && detailsRef.current) {
+        detailsRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+    setSelectedCategory(skillData[option]?.categories?.[0] || "Default Category");
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+
+    // Scroll to the right section on small screens
+    if (window.innerWidth < 700 && detailsRef.current) {
+      detailsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const currentData = skillData[selectedOption];
+
   return (
-    <section id='skills'>
-        <span className='skillTitle'>What do I do</span>
-        <span className='skillDescription'>An innovative Full Stack Developer and DevOps Engineer with a proven history of making processes more efficient and improving performance through cutting-edge technologies. Passionate about creating seamless user experiences and robust backend solutions, dedicated to driving excellence in every project.</span>
-        <div className='skillBars'>
-            <div className='skillBar'>
-                <img src= {UIDesign} alt='Front End Development' className='skillBarImg'/>
-                <div className='skillBarContent'>
-                    <h2 className='skillBarTitle'>Frontend Development</h2>
-                    <p className='skillBarPara'>I create beautiful, responsive and user-friendly websites using the latest frontend technologies.</p>
-                </div>
+    <section id="skills" className="skills-section">
+      <div className="skills-header">
+        <h2 className="skills-heading">Skills</h2>
+        <p className="skills-overview">
+          Explore my expertise across various domains, from frontend frameworks
+          to cloud services and DevOps tools.
+        </p>
+      </div>
+
+      {/* Toggle Buttons */}
+      <div className="skills-toggle">
+        <button
+          className={`toggle-button ${
+            selectedOption === "skillCategories" ? "active" : ""
+          }`}
+          onClick={() => handleOptionChange("skillCategories")}
+        >
+          Skill Categories
+        </button>
+        <button
+          className={`toggle-button ${
+            selectedOption === "techStack" ? "active" : ""
+          }`}
+          onClick={() => handleOptionChange("techStack")}
+        >
+          Technology Stack
+        </button>
+      </div>
+
+      {/* Skills Content */}
+      <div className="skills-content">
+        {/* Left Side */}
+        <div className="skills-left">
+          {currentData?.categories?.map((category) => (
+            <div
+              key={category}
+              className={`category-card ${
+                selectedCategory === category ? "active" : ""
+              }`}
+              onClick={() => handleCategoryClick(category)}
+            >
+              <h3 className="category-title">{category}</h3>
             </div>
-            <div className='skillBar'>
-                <img src={WebDesign} alt='Back End Development' className='skillBarImg'/>
-                <div className='skillBarContent'>
-                    <h2 className='skillBarTitle'>Backend Development</h2>
-                    <p className='skillBarPara'>I build scalable and efficient backend solutions that power your applications.</p>
-                </div>
-            </div>
-            <div className='skillBar'>
-                <img src={AppDesign} alt='DevOps Professional' className='skillBarImg'/>
-                <div className='skillBarContent'>
-                    <h2 className='skillBarTitle'>DevOps</h2>
-                    <p className='skillBarPara'>I automate and streamline your development processes to make your team more efficient.</p>
-                </div>
-            </div>    
+          ))}
         </div>
-            
+
+        {/* Right Side */}
+        <div className="skills-details" ref={detailsRef}>
+          <h3 className="details-heading">{selectedCategory}</h3>
+          {selectedOption === "skillCategories" ? (
+            selectedCategory === "Certifications" ? (
+              <div className="certifications-container">
+                {currentData.details[selectedCategory]?.map((cert, index) => (
+                  <div key={index} className="certification-card">
+                    <p>{cert}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="progress-bars">
+                {currentData?.details[selectedCategory]?.map((item) => (
+                  <div key={item.name} className="progress-bar">
+                    <span className="progress-name">{item.name}</span>
+                    <div className="progress">
+                      <div
+                        className="progress-filled"
+                        style={{ width: `${item.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )
+          ) : (
+            <div className="tech-grid">
+              {currentData?.details[selectedCategory]?.map((tech, index) => (
+                <div key={index} className="tech-item">
+                  {tech}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
     </section>
   );
-}
+};
 
 export default Skills;
