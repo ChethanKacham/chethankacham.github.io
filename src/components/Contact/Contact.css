@@ -1,78 +1,74 @@
 #contactPage {
     min-height: calc(100vh - 5rem);
-    width: 100vw;
-    max-width: 60rem;
+    width: 100%; /* Ensure the background spans the full width */
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding: 0 1rem; */
+    background: linear-gradient(135deg, #101028, #181830); /* Full-width background */
 }
 
 .contactPageTitle {
     font-size: 3rem;
     margin-bottom: 1rem;
-}
-
-.clientDesc {
-    font-weight: 300;
-    font-size: 1rem;
-}
-
-.clientLogos {
-    margin: 1rem 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.clientLogo {
-    object-fit: cover;
-    width: 23%;
-    min-width: 9rem;
-    margin: auto;
-    padding: 0.25rem;
-}
-
-#clients {
-    padding: 2rem;
+    color: #ffd700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .contactDesc {
     padding: 1rem;
-    font-size: medium;
+    font-size: 1.2rem;
     font-weight: 300;
+    color: #ccc;
+    margin-bottom: 2rem;
 }
 
 .contactForm {
     display: flex;
+    padding-top: 0.7rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1rem;
-    width: 90vw;
-    max-width: 60rem;
+    width: 90%;
 }
 
 .contactInput {
     font-size: medium;
     width: 100%;
     max-width: 40rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1rem;
     margin: 0.5rem;
     color: white;
-    border: none;
-    border-bottom: 0.5rem;
-    background: rgb(50,50,50);
+    border: 1px solid white;
+    border-radius: 5px;
+    background: rgb(50, 50, 50);
+    transition: border 0.3s ease, background 0.3s ease;
+}
+
+.contactInput:focus {
+    outline: none;
+    border: 2px solid white;
+    background: rgb(70, 70, 70);
 }
 
 .contactBtn {
-    padding: 0.75rem 3.5rem;
+    padding: 0.8rem 3.5rem;
     border: none;
     border-radius: 0.5rem;
-    background: white;
-    margin: 2rem;
+    background: #ffd700;
+    color: #29293e;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contactBtn:hover {
+    background: #e6c200;
+    transform: scale(1.05);
 }
 
 .links {
@@ -80,13 +76,50 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 1rem;
+    padding-top: 1.5rem;
 }
 
 .link {
-    object-fit: cover;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 20px;
-    margin: 0 0.75rem;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.link:hover {
+    transform: scale(1.2);
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.link:hover .icon {
+    color: #ffd700;
+}
+
+@media (max-width: 768px) {
+    .contactPageTitle {
+        font-size: 2.5rem;
+    }
+
+    .contactDesc {
+        font-size: 1rem;
+    }
+
+    .contactInput {
+        font-size: 0.9rem;
+    }
+
+    .contactBtn {
+        font-size: 0.9rem;
+        padding: 0.6rem 2.5rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
 }

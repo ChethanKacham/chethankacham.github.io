@@ -1,54 +1,137 @@
-#works {
-    min-height: calc(100vh - 5rem);
-    width: 100vw;
-    max-width: 60rem;
+/* Works Section */
+.works {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #0d0d2d, #1a1a3b);
+    color: white;
+    text-align: center;
+}
+
+.worksContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Title and Subtitle */
+.worksTitle {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.worksSubtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #ccc;
+}
+
+/* Grid Layout */
+.worksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+/* Card Styling */
+.worksCard {
+    background: #29293e;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 1rem;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.worksTitle {
-    margin: 1rem 0;
-    font-size: 3rem;
+.worksCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
 }
 
-.worksDesc {
-    font-weight: 300;
+/* Card Header */
+.cardHeader {
+    margin-bottom: 1rem;
+}
+
+.projectName {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Project Description */
+.projectDescription {
     font-size: 1rem;
-    max-width: 45rem;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
-.worksImgs {
+/* Technologies */
+.technologies {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    width: 100vw;
-    max-width: 65rem;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.worksImg {
-    object-fit: cover;
-    height: 20rem;
-    margin: 0.5rem;
+.techBadge {
+    background: #ffd700;
+    color: #29293e;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
-.worksBtn {
-    padding: 0.5rem 2.5rem;
-    border: none;
-    border-radius: 2rem;
-    background: white;
+/* Button */
+.projectButton {
+    background: linear-gradient(135deg, #ffd700, #f9a602);
+    color: #29293e;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
     font-size: 1rem;
-    margin: 3rem 0;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 590px) {
-    .worksImg {
-        height: 48vw;
+.projectButton i {
+    font-size: 1.2rem;
+}
+
+.projectButton:hover {
+    background: linear-gradient(135deg, #f9a602, #ffd700);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1096px) {
+    .worksGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
+}
+
+@media (max-width: 768px) {
+    .worksGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .worksCard {
+        padding: 1.5rem;
+    }
+
+    .projectButton {
+        font-size: 0.9rem;
+    }
 }

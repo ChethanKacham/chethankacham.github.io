@@ -1,16 +1,72 @@
+/* Footer Container */
 .footer {
     width: 100vw;
-    height: 2rem;
-    background: rgb(40,40,40);
+    padding: 1rem 0;
+    background: linear-gradient(135deg, #0d0d2d, #1a1a3b);
+    color: white;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 300;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Content */
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Footer Text */
+.footerText {
     font-size: small;
+    font-weight: 300;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Footer Links */
+.footerLinks {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+/* Footer Icon Styling */
+.footerIcon {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.footerIcon:hover {
+    color: #ffd700;
+    transform: scale(1.2); /* Adds a zoom effect on hover */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .footerText {
+        font-size: 0.9rem;
+    }
+
+    .footerIcon {
+        font-size: 1.3rem;
+    }
 }
 
 @media screen and (max-width: 360px) {
-    .footer {
-        font-size: x-small;
+    .footerText {
+        font-size: 0.8rem;
+    }
+
+    .footerIcon {
+        font-size: 1.1rem;
     }
 }
