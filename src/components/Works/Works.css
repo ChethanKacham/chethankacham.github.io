@@ -101,6 +101,7 @@
     text-align: center;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
 }
@@ -116,7 +117,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1096px) {
+@media (max-width: 1120px) {
     .worksGrid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -132,6 +133,15 @@
     }
 
     .projectButton {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Adjust font size */
+        padding: 0.6rem 1rem; /* Reduce padding */
+        gap: 0.4rem; /* Reduce gap between icon and text */
+    }
+}
+
+@media (max-width: 500px) {
+    .projectButton {
+        font-size: 0.85rem; /* Smaller font size for very small screens */
+        padding: 0.5rem 0.8rem; /* Reduce padding further */
     }
 }

@@ -7,11 +7,11 @@ import NFCLogo from "../../assets/NFC.jpeg";
 
 const Clients = () => {
     const clients = [
-        { id: 1, name: "DreamStudio", logo: DreamStudioLogo },
-        { id: 2, name: "Wipro", logo: WiproLogo },
-        { id: 3, name: "Daimler AG", logo: DaimlerLogo },
-        { id: 4, name: "Telstra", logo: TelstraLogo },
-        { id: 5, name: "Nuclear Fuel Complex", logo: NFCLogo },
+        { id: 1, name: "DreamStudio", logo: DreamStudioLogo, link: "https://dreamstudio.com/" },
+        { id: 2, name: "Wipro", logo: WiproLogo, link: "https://www.wipro.com/" },
+        { id: 3, name: "Daimler AG", logo: DaimlerLogo, link: "https://group.mercedes-benz.com/company/" },
+        { id: 4, name: "Telstra", logo: TelstraLogo, link: "https://www.telstra.com.au/" },
+        { id: 5, name: "NFC", logo: NFCLogo, link: "https://www.nfc.gov.in/" },
     ];
 
     return (
@@ -23,14 +23,20 @@ const Clients = () => {
                 </p>
                 <div className="clientLogos">
                     {clients.map((client) => (
-                        <div className="clientLogoWrapper" key={client.id}>
+                        <a
+                            href={client.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="clientLogoWrapper"
+                            key={client.id}
+                        >
                             <img
                                 src={client.logo}
                                 alt={client.name}
                                 className="clientLogo"
                             />
                             <h3 className="clientName">{client.name}</h3>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>

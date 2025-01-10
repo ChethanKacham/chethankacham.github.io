@@ -33,7 +33,7 @@
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(5, 1fr); /* Default: 5 logos in a row */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust layout dynamically */
 }
 
 /* Logo Wrapper */
@@ -41,6 +41,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none; /* Remove underline for links */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -66,40 +67,35 @@
 
 /* Client Name */
 .clientName {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #ffd700;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+    white-space: normal; /* Allow wrapping for smaller names */
+    max-width: 140px; /* Prevent overly wide names */
+    line-height: 1.2;
 }
+
 
 /* Responsive Adjustments */
-
-/* Screens wider than 1024px: 4 logos per row */
-@media (max-width: 1024px) {
+/* @media (max-width: 768px) {
     .clientLogos {
-        transform: scale(0.9);
+        grid-template-columns: repeat(2, 1fr); 
     }
-}
+} */
 
-/* Screens wider than 768px: 3 logos per row */
-@media (max-width: 768px) {
-    .clientLogos {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Screens wider than 576px: 2 logos per row */
-@media (max-width: 576px) {
-    .clientLogos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Small screens (e.g., phones): 1 logo per row */
 @media (max-width: 400px) {
     .clientLogos {
-        /* grid-template-columns: 1fr; */
-        transform: scale(0.8);
+        grid-template-columns: 1fr; /* Show 1 logo per row */
+    }
+
+    .clientLogo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .clientName {
+        font-size: 0.9rem;
     }
 }

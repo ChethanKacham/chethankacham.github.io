@@ -1,69 +1,115 @@
+/* Introduction Section */
 #intro {
-    height: calc(100vh - 5rem);
     width: 100%;
+    height: calc(100vh - 5rem); /* Full height minus Navbar */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, #1e1e2f, #3e3e59);
+    background: linear-gradient(135deg, #1e1e2f, #29293e);
     color: white;
     text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden; 
 }
 
+/* Intro Wrapper */
 .introWrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 2rem;
     width: 100%;
     max-width: 1200px;
-    gap: 2rem;
-    flex-wrap: wrap;
+}
+
+/* Profile Picture Container */
+.profilePicContainer {
+    flex: 1;
+    height: calc(100vh - 5rem); /* Matches the intro section's height */
+    max-height: calc(100vh - 5rem); /* Prevents image from exceeding section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevents image overflow */
+    position: relative;
 }
 
 /* Profile Picture */
 .profilePic {
-    width: auto; /* Allows dynamic width based on the image aspect ratio */
-    height: 350px; /* Fixed height for proper rendering */
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    border: 5px solid #ffd700;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%; /* Fills the container height */
+    object-fit: cover; /* Ensures image scales properly */
+    object-position: center; 
     transition: transform 0.3s ease;
 }
 
-.profilePic:hover {
-    transform: scale(1.05);
+.profilePicContainer:hover .profilePic {
+    transform: scale(1.02); /* Slight zoom effect */
 }
 
-/* Content Section */
+/* Overlay Content for Small Screens */
+.overlayContent {
+    display: none; /* Hidden by default */
+}
+
+/* Content Section for Large Screens */
 .introContent {
     flex: 1;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    gap: 1rem;
+    padding: 1rem;
 }
 
+/* Shared Text Styles */
 .hello {
     font-size: 1.5rem;
     font-weight: 300;
     color: #f8f9fa;
-    margin-bottom: 0.5rem;
 }
 
 .introName {
     font-size: 2.5rem;
     font-weight: 800;
     color: #ffd700;
-    margin-bottom: 1rem;
 }
 
 .introPara {
     font-size: 1.2rem;
     font-weight: 300;
-    line-height: 1.5;
-    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #dcdcdc;
+    margin: 0;
+}
+
+/* Skills Badges (Commented Out for Now) */
+.skillsContainer {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.skillBadge {
+    background: #ffd700;
+    color: #1e1e2f;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.skillBadge:hover {
+    background: #e6c200;
+    transform: scale(1.05);
 }
 
 /* Buttons */
@@ -71,12 +117,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-.btnImg {
-    object-fit: cover;
-    margin: 0 0.25rem;
-    height: 1rem;
+    margin-top: 1rem;
 }
 
 .btn {
@@ -88,15 +129,21 @@
     font-weight: 600;
     cursor: pointer;
     border: none;
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
+.btnImg {
+    object-fit: cover;
+    margin: 0 0.25rem;
+    height: 1rem;
+}
+
 .btn:hover {
-    background: #fff;
+    background: white;
     color: #1e1e2f;
     box-shadow: 0 0 10px #ffd700;
 }
@@ -113,102 +160,102 @@
     color: #1e1e2f;
 }
 
-/* Responsive Styles */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     #intro {
         padding: 1.5rem;
+        height: auto; /* Adjust height for smaller screens */
     }
 
     .introWrapper {
+        flex-direction: column; /* Stack image and content vertically */
+    }
+
+    .profilePicContainer {
+        width: 100%;
+        height: calc(100vh - 5rem); /* Full height minus Navbar */
+        position: relative;
+    }
+
+    .profilePic {
+        height: calc(100vh - 5rem); /* Ensures full height minus NavBar size */
+        object-position:  center; /* Ensures face visibility */
+    }
+
+    /* Overlay Content */
+    .overlayContent {
+        display: flex; /* Show overlay content for small screens */
         flex-direction: column;
         align-items: center;
-        text-align: center;
-    }
-
-    .introContent {
-        align-items: center;
-    }
-
-    .introPara {
-        text-align: center;
-    }
-
-    .btnContainer {
         justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(30, 30, 47, 0.8);
+        padding: 1rem;
+        text-align: center;
     }
 
-    .profilePic {
-        height: 250px; 
+    /* Hide Intro Content */
+    .introContent {
+        display: none;
     }
-}
 
-@media screen and (max-width: 480px) {
-    .profilePic {
-        height: 250px; 
+    /* Adjust Text Sizes */
+    .hello {
+        font-size: 1.2rem;
     }
 
     .introName {
         font-size: 2rem;
     }
 
+    .introPara {
+        font-size: 1rem;
+    }
+
+    /* Buttons in Overlay */
+    .btnContainer {
+        justify-content: center;
+    }
+
     .btn {
         font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .skillBadge {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
     }
 }
 
-@media screen and (max-width: 360px) {
-    #intro {
-        padding: 1rem; /* Reduce padding to save space */
-    }
-
-    .introWrapper {
-        flex-direction: column; /* Stack image and text vertically */
-        gap: 1rem; /* Provide enough space between sections */
+@media screen and (max-width: 480px) {
+    .overlayContent {
+        padding: 0.5rem;
     }
 
     .profilePic {
-        height: 200px; /* Keep the image smaller to fit the screen */
-        border: 4px solid #ffd700; /* Proportional border size */
-    }
-
-    .introContent {
-        align-items: center; /* Center the text for better alignment */
-        text-align: center;
-    }
-
-    .hello {
-        font-size: 1.2rem; /* Slightly smaller font size for greeting */
-        margin-bottom: 0.5rem;
+        height: calc(100vh - 5rem); /* Keeps consistency for smaller screens */
+        object-position: center; /* Centers the image for better visibility */
     }
 
     .introName {
-        font-size: 1.8rem; /* Scale down the name font size */
-        margin-bottom: 1rem;
+        font-size: 1.8rem;
     }
 
     .introPara {
-        font-size: 0.95rem; /* Adjust paragraph font size */
-        line-height: 1.4; /* Tighten line spacing for compactness */
-        max-width: 90%; /* Restrict width for better readability */
+        font-size: 0.9rem;
     }
 
     .btnContainer {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 0.5rem; /* Reduce gap between buttons */
-        width: 100%; /* Ensure buttons span full width */
+        transform: scale(0.9);
     }
 
     .btn {
-        font-size: 0.85rem; /* Smaller font size for buttons */
-        padding: 0.5rem 1rem; /* Reduce padding for compact buttons */
-        width: 100%; /* Make buttons span the full width */
-        border-radius: 20px; /* Slightly smaller border radius */
-    }
-
-    .downloadResume {
-        font-size: 0.85rem; /* Smaller font for download button */
+        font-size: 0.8rem;
         padding: 0.5rem 1rem;
-        width: 100%; /* Consistent with the primary button */
     }
 }

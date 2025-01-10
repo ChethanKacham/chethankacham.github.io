@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./NavBar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/Clogocopy.png"
 import contactImg from "../../assets/contact.png";
 import { Link as ScrollLink } from "react-scroll";
 import burgermenu from "../../assets/menu.png";

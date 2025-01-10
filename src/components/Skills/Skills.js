@@ -30,10 +30,10 @@ const Skills = () => {
   return (
     <section id="skills" className="skills-section">
       <div className="skills-header">
-        <h2 className="skills-heading">Skills</h2>
+        <h2 className="skills-heading">MY SKILLS</h2>
         <p className="skills-overview">
-          Explore my expertise across various domains, from frontend frameworks
-          to cloud services and DevOps tools.
+          Explore my expertise across various domains, including frontend and backend development,
+          frameworks, cloud services, and DevOps tools.
         </p>
       </div>
 
@@ -77,16 +77,27 @@ const Skills = () => {
         {/* Right Side */}
         <div className="skills-details">
           <h3 className="details-heading">{selectedCategory}</h3>
-          {selectedOption === "skillCategories" ? (
+          {selectedOption === "skillCategories" || selectedOption === "techStack" ? (
             selectedCategory === "Certifications" ? (
               <div className="certifications-container">
                 {currentData.details[selectedCategory].map((cert, index) => (
                   <div key={index} className="certification-card">
-                    <p>{cert}</p>
+                    {cert.link ? (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="certification-link"
+                      >
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <span className="certification-name">{cert.name}</span>
+                    )}
                   </div>
                 ))}
               </div>
-            ) : (
+            ) : selectedOption === "skillCategories" ? (
               <div className="progress-bars">
                 {currentData.details[selectedCategory].map((item) => (
                   <div key={item.name} className="progress-bar">
@@ -100,16 +111,16 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
+            ) : (
+              <div className="tech-grid">
+                {currentData.details[selectedCategory].map((tech, index) => (
+                  <div key={index} className="tech-item">
+                    {tech}
+                  </div>
+                ))}
+              </div>
             )
-          ) : (
-            <div className="tech-grid">
-              {currentData.details[selectedCategory].map((tech, index) => (
-                <div key={index} className="tech-item">
-                  {tech}
-                </div>
-              ))}
-            </div>
-          )}
+          ) : null}
         </div>
       </div>
     </section>

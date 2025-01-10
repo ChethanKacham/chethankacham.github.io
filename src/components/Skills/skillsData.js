@@ -55,13 +55,31 @@ const skillData = {
           { name: "Powershell", level: 85 },
         ],
         Certifications: [
-          "AWS Certified Cloud Practitioner",
-          "AWS Certified Developer - Associate",
-          "Microsoft Certified - Azure Administrator Associate",
-          "Microsoft Certified - Azure Fundamentals",
-          "Java Back End Developer Certified - Wipro",
-          "DevOps Professional Certified - Wipro",
-          "ReactJS Front End Developer Certified - Wipro",
+          {
+            name: "AWS Certified Developer - Associate",
+            link: "https://www.credly.com/badges/1dad7c56-43f2-4ab1-8559-649bdb6c77fa/public_url",
+          },
+          {
+            name: "Microsoft Certified - Azure Administrator Associate",
+            link: "https://learn.microsoft.com/api/credentials/share/en-us/ChethanKacham-1424/C07EAFAFD3125524?sharingId=E30BAC727A6F3A38",
+          },
+          {
+            name: "AWS Certified Cloud Practitioner",
+            link: "https://www.credly.com/badges/a553cb15-ba6d-4d83-9a8f-3446ac3b4537/public_url",
+          },
+          {
+            name: "Microsoft Certified - Azure Fundamentals",
+            link: "https://learn.microsoft.com/api/credentials/share/en-us/ChethanKacham-1424/6B7962DCA336ECE2?sharingId=E30BAC727A6F3A38",
+          },
+          {
+            name: "Java Back End Developer Certified - Wipro",
+          },
+          {
+            name: "DevOps Professional Certified - Wipro",
+          },
+          {
+            name: "ReactJS Front End Developer Certified - Wipro",
+          },
         ],
       },
     },
@@ -99,13 +117,31 @@ const skillData = {
           "Powershell",
         ],
         Certifications: [
-          "AWS Certified Cloud Practitioner",
-          "AWS Certified Developer - Associate",
-          "Microsoft Certified - Azure Administrator Associate",
-          "Microsoft Certified - Azure Fundamentals",
-          "Java Back End Developer Certified - Wipro",
-          "DevOps Professional Certified - Wipro",
-          "ReactJS Front End Developer Certified - Wipro",
+          {
+            name: "AWS Certified Developer - Associate",
+            link: "https://www.credly.com/badges/1dad7c56-43f2-4ab1-8559-649bdb6c77fa/public_url",
+          },
+          {
+            name: "Microsoft Certified - Azure Administrator Associate",
+            link: "https://learn.microsoft.com/api/credentials/share/en-us/ChethanKacham-1424/C07EAFAFD3125524?sharingId=E30BAC727A6F3A38",
+          },
+          {
+            name: "AWS Certified Cloud Practitioner",
+            link: "https://www.credly.com/badges/a553cb15-ba6d-4d83-9a8f-3446ac3b4537/public_url",
+          },
+          {
+            name: "Microsoft Certified - Azure Fundamentals",
+            link: "https://learn.microsoft.com/api/credentials/share/en-us/ChethanKacham-1424/6B7962DCA336ECE2?sharingId=E30BAC727A6F3A38",
+          },
+          {
+            name: "Java Back End Developer Certified - Wipro",
+          },
+          {
+            name: "DevOps Professional Certified - Wipro",
+          },
+          {
+            name: "ReactJS Front End Developer Certified - Wipro",
+          },
         ],
       },
     },
