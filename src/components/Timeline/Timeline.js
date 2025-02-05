@@ -19,7 +19,7 @@ const timelineData = [
     `,
   },
   {
-    date: "JUN 2019 - SEPT 2024",
+    date: "JUN 2019 - AUG 2024",
     title: "Senior Project Engineer",
     company: "AT WIPRO LIMITED",
     description: `
