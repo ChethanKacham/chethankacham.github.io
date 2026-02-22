@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.8bdc1a17.css",
-    "main.js": "/static/js/main.ef92b47c.js",
+    "main.css": "/static/css/main.870675aa.css",
+    "main.js": "/static/js/main.fad380d5.js",
     "static/media/ChethanProfilepicCrop.jpg": "/static/media/ChethanProfilepicCrop.21f4b98d32848fc6d2dd.jpg",
     "index.html": "/index.html",
-    "main.8bdc1a17.css.map": "/static/css/main.8bdc1a17.css.map",
-    "main.ef92b47c.js.map": "/static/js/main.ef92b47c.js.map"
+    "main.870675aa.css.map": "/static/css/main.870675aa.css.map",
+    "main.fad380d5.js.map": "/static/js/main.fad380d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.8bdc1a17.css",
-    "static/js/main.ef92b47c.js"
+    "static/css/main.870675aa.css",
+    "static/js/main.fad380d5.js"
   ]
 }
